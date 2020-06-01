@@ -5,6 +5,6 @@ export const CardListContainer = styled.div`
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 10px;
     padding: 20px;
 `;
