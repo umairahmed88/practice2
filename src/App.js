@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 
 import { CardList } from './components/card-list/card-list.component';
 
-import { SearchBox } from './components/search-box/search-box.component'
+import { SearchBox } from './components/search-box/search-box.component';
 
-import './App.css';
+import { AppContainer } from './App.styles';
+
+import { GlobalStyle } from './global.styles';
 
 class App extends Component {
   constructor() {
@@ -31,13 +33,14 @@ class App extends Component {
     const filteredSamples = samples.filter(sample => 
       sample.name.toLowerCase().includes(searchField.toLowerCase())
     );
-    
+
     return (
-      <div className='App'>
+      <AppContainer>
+        <GlobalStyle />
         <h1>Monsters Rolodex</h1>
         <SearchBox onSearchChange={this.onSearchChange} />
         <CardList samples={filteredSamples} />
-      </div>
+      </AppContainer>
     );
   }
 }
